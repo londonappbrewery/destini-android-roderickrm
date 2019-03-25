@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Button mButtonBottom;
 
     // TODO: Steps 4 & 8 - Declare member variables here:
-
+    int mCurrentStory = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,21 @@ public class MainActivity extends AppCompatActivity {
         mButtonTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (mCurrentStory == 1) {
+                    mTextView.setText(R.string.T3_Story);
+                    mButtonTop.setText(R.string.T3_Ans1);
+                    mButtonBottom.setText(R.string.T3_Ans2);
+                    mCurrentStory = 3;
+                } else if (mCurrentStory == 2){
+                    mTextView.setText(R.string.T3_Story);
+                    mButtonTop.setText(R.string.T3_Ans1);
+                    mButtonBottom.setText(R.string.T3_Ans2);
+                    mCurrentStory = 3;
+                } else if (mCurrentStory == 3){
+                    mTextView.setText(R.string.T6_End);
+                    mButtonTop.setVisibility(View.GONE);
+                    mButtonBottom.setVisibility(View.GONE);
+                }
             }
         });
 
@@ -39,7 +53,20 @@ public class MainActivity extends AppCompatActivity {
         mButtonBottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (mCurrentStory == 1) {
+                    mTextView.setText(R.string.T2_Story);
+                    mButtonTop.setText(R.string.T2_Ans1);
+                    mButtonBottom.setText(R.string.T2_Ans2);
+                    mCurrentStory = 2;
+                } else if (mCurrentStory == 2) {
+                    mTextView.setText(R.string.T4_End);
+                    mButtonTop.setVisibility(View.GONE);
+                    mButtonBottom.setVisibility(View.GONE);
+                } else if (mCurrentStory == 3) {
+                    mTextView.setText(R.string.T5_End);
+                    mButtonTop.setVisibility(View.GONE);
+                    mButtonBottom.setVisibility(View.GONE);
+                }
             }
         });
 
